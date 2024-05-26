@@ -59,7 +59,16 @@
 
 
     <!-- -------------------------------------------------Eid-------------------------------------- -->
-
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>80% OFF + FREE SHIPPING</h2>
+            <p>if you get this item now.<br>This timepiece is yours for the next</p>
+            <div id="countdown" class="countdown">15:00</div>
+            <button id="getOffer" class="button">GET MY 80% OFF</button>
+            <button id="declineOffer" class="button">No thanks, I'd rather pay full price</button>
+        </div>
+    </div>
     <section class="packages">
       <div class="content">
         <h1>Shoe Collection</h1>
@@ -170,7 +179,10 @@
                                 <h2 class="multiline-ellipsis-2">${menuItem.name}</h2>
                             </div>
                             <div class="package-price">        
-                                <h4 class="multiline-ellipsis-3">Rs ${menuItem.button1Price}</h4>
+                                <h4 class="multiline-ellipsis-3">$ ${menuItem.button1oPrice}</h4>
+                            </div>
+                            <div class="package-price">        
+                                <h4 class="multiline-ellipsis-3">$ ${menuItem.button1Price}</h4>
                             </div>    
                         </div>    
                     </div>    
@@ -192,6 +204,62 @@
         var url = "/shoe.html";
         window.location.href = url;
       }
+      document.addEventListener("DOMContentLoaded", function() {
+    var popup = document.getElementById("popup");
+    var closeBtn = document.querySelector(".close");
+    var getOfferBtn = document.getElementById("getOffer");
+    var declineOfferBtn = document.getElementById("declineOffer");
+    var countdownElement = document.getElementById("countdown");
+
+    // Function to start the countdown
+    function startCountdown(duration, display) {
+        var timer = duration, minutes, seconds;
+        var interval = setInterval(function () {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.textContent = minutes + ":" + seconds;
+
+            if (--timer < 0) {
+                clearInterval(interval);
+            }
+        }, 1000);
+    }
+
+    // Show the popup when the page loads
+    popup.style.display = "block";
+
+    // Start the 15 minute countdown
+    var fifteenMinutes = 15 * 60;
+    startCountdown(fifteenMinutes, countdownElement);
+
+    // Close the popup when the close button is clicked
+    closeBtn.onclick = function() {
+        popup.style.display = "none";
+    };
+
+    // Close the popup when the get offer button is clicked
+    getOfferBtn.onclick = function() {
+        popup.style.display = "none";
+    };
+
+    // Close the popup when the decline offer button is clicked
+    declineOfferBtn.onclick = function() {
+        alert("Are you ok with declining the offer?!");
+        popup.style.display = "none";
+    };
+
+    // Close the popup if the user clicks outside of it
+    window.onclick = function(event) {
+        if (event.target == popup) {
+            popup.style.display = "none";
+        }
+    };
+});
+
     </script>
     <script src="script.js"></script>
   </body>

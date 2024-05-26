@@ -127,7 +127,7 @@
             itemElement.innerHTML = `
                         <div class="checkout-details">
                             <p>Name: ${item.name}</p>
-                            <p>Price: Rs ${item.price}</p>
+                            <p>Price:$  ${item.price}</p>
                             <p>Quantity: ${item.quantity}</p>
                             <p>Size: ${item.buttonName}</p>
                             <hr>
@@ -139,7 +139,7 @@
           });
 
           // Display total amount
-          cartItemsContainer.innerHTML += `<h3 class="checkout-total">Total: Rs ${totalAmount}</h3>`;
+          cartItemsContainer.innerHTML += `<h3 class="checkout-total">Total: $ ${totalAmount}</h3>`;
 
           // Add event listeners to Remove buttons
           var removeButtons = document.querySelectorAll(".remove-item-button");

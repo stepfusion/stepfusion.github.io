@@ -223,7 +223,7 @@
 
               <div class="package-prices">
                   <div class="package-price" id="current-price">
-                  <h4>Rs ${menuItem.button1Price}</h4>
+                  <h4>$ ${menuItem.button1Price}</h4>
                   </div>
               </div>
 
@@ -375,7 +375,7 @@ ${
                   var currentPrice =
                     menuItemElement.querySelector("#current-price h4");
                   currentPrice.textContent =
-                    "Rs " + priceButton.getAttribute("data-price");
+                    $ + priceButton.getAttribute("data-price");
 
                   // Capture the current button name
                   var currentButtonName = priceButton.textContent;
@@ -404,7 +404,7 @@ ${
                 var randomImage = itemImages[randomImageIndex]; // Get a random image from the array
                 var itemPrice = menuItemElement
                   .querySelector("#current-price h4")
-                  .textContent.replace("Rs ", "");
+                  .textContent.replace("$ ", "");
 
                 // Retrieve the current button name from localStorage
                 var currentButtonName =

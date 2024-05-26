@@ -74,7 +74,7 @@
             <div class="post">
               <div class="post-line"></div>
               <div class="screen">
-                <div class="dollar">RS</div>
+                <div class="dollar">$</div>
               </div>
               <div class="numbers"></div>
               <div class="numbers-line2"></div>
@@ -112,7 +112,7 @@
                                     </div>
                                     <div class="cart-details">
                                         <p>Name: ${item.name}</p>
-                                        <p>Price: Rs ${item.price}</p>
+                                        <p>Price: $ ${item.price}</p>
                                         <p>Quantity: ${item.quantity}</p>
                                         <p>Size: ${item.buttonName}</p>
                                     </div>
@@ -127,7 +127,7 @@
             });
 
             // Display total amount
-            cartItemsContainer.innerHTML += `<h3 class="total-amount">Total: Rs ${totalAmount}</h3>`;
+            cartItemsContainer.innerHTML += `<h3 class="total-amount">Total: $ ${totalAmount}</h3>`;
 
             // Add event listeners to Remove buttons
             var removeButtons = document.querySelectorAll(

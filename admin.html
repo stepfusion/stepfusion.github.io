@@ -77,6 +77,7 @@ click <a href="admin7.html">here</a> to edit casual<br>
 <input type="text" id="itemDescriptionnext" placeholder="Enter Package description for next page">
 <input type="text" id="button1" placeholder="Enter Button 1 name">
 <input type="text" id="button1Price" placeholder="Enter Button 1 price">
+<input type="text" id="button1oPrice" placeholder="Enter Button 1 oprice">
 <input type="text" id="button2" placeholder="Enter Button 2 name">
 <input type="text" id="button2Price" placeholder="Enter Button 2 price">
 <input type="text" id="button3" placeholder="Enter Button 3 name">
@@ -170,6 +171,7 @@ click <a href="admin7.html">here</a> to edit casual<br>
     // Additional fields for buttons and their prices
     var button1 = document.getElementById("button1").value;
     var button1Price = document.getElementById("button1Price").value;
+    var button1oPrice = document.getElementById("button1oPrice").value;
     var button2 = document.getElementById("button2").value;
     var button2Price = document.getElementById("button2Price").value;
     var button3 = document.getElementById("button3").value;
@@ -245,6 +247,7 @@ Promise.all(uploadTasks).then(function(downloadURLs) {
             // Additional properties for buttons and their prices
             button1: button1,
             button1Price: button1Price,
+            button1oPrice: button1oPrice,
             button2: button2,
             button2Price: button2Price,
             button3: button3,
