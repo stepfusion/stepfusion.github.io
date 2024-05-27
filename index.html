@@ -144,66 +144,63 @@
     <script src="firebase.js"></script>
 
     <script>
-      var database = firebase.database();
+         var database = firebase.database();
 
-      // Fetch menu data from Firebase
-      var menuRef = database.ref("shoes");
-      menuRef.once("value", function (snapshot) {
-        // Use once instead of on to fetch the data only once
-        var menuData = snapshot.val();
+// Fetch menu data from Firebase
+var menuRef = database.ref("shoes");
+menuRef.once("value", function (snapshot) {
+  // Use once instead of on to fetch the data only once
+  var menuData = snapshot.val();
 
-        // Display menu data on the web page
-        var menuContainer = document.getElementById("menu");
-        menuContainer.innerHTML = "";
+  // Display menu data on the web page
+  var menuContainer = document.getElementById("menu");
+  menuContainer.innerHTML = "";
 
-        for (var key in menuData) {
-          if (menuData.hasOwnProperty(key)) {
-            var menuItem = menuData[key];
-            var firstImageUrl = Array.isArray(menuItem.images)
-              ? menuItem.images[0]
-              : menuItem.images; // Get the first image URL if it's an array
+  for (var key in menuData) {
+    if (menuData.hasOwnProperty(key)) {
+      var menuItem = menuData[key];
+      var firstImageUrl = Array.isArray(menuItem.images)
+        ? menuItem.images[0]
+        : menuItem.images; // Get the first image URL if it's an array
 
-            var menuItemElement = document.createElement("div");
-            menuItemElement.innerHTML = `
-            <div class="btn-container">
-              <button class="btn-package" onclick="redirectToUrl('${menuItem.name}')">
-                <div class="packagesBox">
-                    <div class="image">
-                        <img src="${firstImageUrl}" alt="${menuItem.name}" class="menu-image"> 
-                    </div>
-                    <div class="preview">
-                    </div>
-                    <div class="content">
-                        <div class="package-details">    
-                            <div class="package-name">    
-                                <h2 class="multiline-ellipsis-2">${menuItem.name}</h2>
-                            </div>
-                            <div class="package-priceo">        
-                                <h4 class="multiline-ellipsis-3"><del style="text-decoration: line-through;">$ ${menuItem.button1oPrice}</del></h4>
-                            </div>
-                            <div class="package-price">        
-                                <h4 class="multiline-ellipsis-3">$ ${menuItem.button1Price}</h4>
-                            </div>    
-                        </div>    
-                    </div>    
-                </div> 
-              </button>
-            </div>
-            `;
-            menuContainer.appendChild(menuItemElement);
+      var menuItemElement = document.createElement("div");
+      menuItemElement.innerHTML = `
+      <div class="btn-container">
+        <button class="btn-package" onclick="redirectToUrl('${menuItem.name}')">
+          <div class="packagesBox">
+              <div class="image">
+                  <img src="${firstImageUrl}" alt="${menuItem.name}" class="menu-image"> 
+              </div>
+              <div class="preview">
+              </div>
+              <div class="content">
+                  <div class="package-details">    
+                      <div class="package-name">    
+                          <h2 class="multiline-ellipsis-2">${menuItem.name}</h2>
+                      </div>
+                      <div class="package-price">        
+                          <h4 class="multiline-ellipsis-3">$ ${menuItem.button1Price}</h4>
+                      </div>    
+                  </div>    
+              </div>    
+          </div> 
+        </button>
+      </div>
+      `;
+      menuContainer.appendChild(menuItemElement);
 
-            // Break the loop after the first iteration
-          }
-        }
-      });
+      // Break the loop after the first iteration
+    }
+  }
+});
 
-      function redirectToUrl(itemName) {
-        // Save itemName to localStorage
-        localStorage.setItem("itemName", itemName);
+function redirectToUrl(itemName) {
+  // Save itemName to localStorage
+  localStorage.setItem("itemName", itemName);
 
-        var url = "/shoe.html";
-        window.location.href = url;
-      }
+  var url = "/shoe.html";
+  window.location.href = url;
+}
       document.addEventListener("DOMContentLoaded", function() {
     var popup = document.getElementById("popup");
     var closeBtn = document.querySelector(".close");

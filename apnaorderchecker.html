@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Check if ordersData is not null or undefined
             if (ordersData) {
                 Object.entries(ordersData).forEach(([orderId, order]) => {
-                    const { name, contact, address, cartItems } = order;
+                    const { name, contact, address, cartItems, location } = order;
 
                     // Check if cartItems is defined and not empty
                     if (cartItems && cartItems.length > 0) {
@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <strong>Price:</strong> ${item.price}<br>
                                 <strong>Size:</strong> ${item.buttonName}<br>
                                 <strong>Quantity:</strong> ${item.quantity}<br>
+                                location: ${item.location}
                                 <strong>Image:</strong> <img src="${item.image}" alt="Item Image"><br>
                                 -----------------------<br>
                             `;

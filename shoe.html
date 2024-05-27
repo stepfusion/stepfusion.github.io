@@ -146,6 +146,7 @@
       var database = firebase.database();
       var menuRef = database.ref("shoes");
 
+     
       // Check if menu items are already loaded
       var menuItemsLoaded = false;
 
@@ -166,7 +167,8 @@
               // Create menu item element
               var menuItemElement = document.createElement("div");
               menuItemElement.innerHTML = `
-              <section class="packages-box-container">
+
+                    <section class="packages-box-container">
                               <div class="content">
                                   <div class="package-details">
                                       <div class="package-name-visa">
@@ -323,7 +325,8 @@ ${
     ? `<button class="price-button" data-price="${menuItem.button17Price}">${menuItem.button17}</button>`
     : ""
 }
- <!-- Add more button checks as needed -->
+
+                  <!-- Add more button checks as needed -->
               </div>
           </div>
       </div>
@@ -361,7 +364,8 @@ ${
                                           }</p>
                                       </div>
                                   </div>
-                       `;
+
+                             `;
 
               // Append menu item element to menu container
               menuContainer.appendChild(menuItemElement);
@@ -375,7 +379,7 @@ ${
                   var currentPrice =
                     menuItemElement.querySelector("#current-price h4");
                   currentPrice.textContent =
-                    $ + priceButton.getAttribute("data-price");
+                    "$ " + priceButton.getAttribute("data-price");
 
                   // Capture the current button name
                   var currentButtonName = priceButton.textContent;

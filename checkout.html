@@ -87,7 +87,7 @@
                 class="form-input"
                 name="contact"
                 id="contact"
-                type="number"
+                type="email"
               />
             </div>
             <div class="form-group">
@@ -100,10 +100,24 @@
                 id="address"
               ></textarea>
             </div>
+            <div class="form-group">
+              <label class="form-label" for="location">Current Location:</label>
+              <input
+                placeholder="Click 'Get Current Location' to retrieve"
+                class="form-input"
+                name="location"
+                id="location"
+                type="text"
+                readonly
+              />
+              <button class="form-button" type="button" id="get-location-btn">Get Current Location</button>
+            </div>
             <button class="form-button" type="submit">Place Order</button>
           </form>
         </div>
-
+      </div>
+      
+     
         <div id="cart-items" class="cart-items"></div>
   
 
@@ -111,6 +125,19 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
     <script src="firebase.js"></script>
     <script>
+      document.getElementById('get-location-btn').addEventListener('click', function() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var locationInput = document.getElementById('location');
+      locationInput.value = position.coords.latitude + ', ' + position.coords.longitude;
+    }, function(error) {
+      alert('Unable to retrieve your location. Error: ' + error.message);
+    });
+  } else {
+    alert('Geolocation is not supported by your browser.');
+  }
+});
+
       document.addEventListener("DOMContentLoaded", function () {
         // Retrieve cart items from localStorage
         var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
@@ -174,44 +201,57 @@
         }
       });
 
-      // Add event listener to form submission
-      document
-        .getElementById("order-form")
-        .addEventListener("submit", function (event) {
-          event.preventDefault(); // Prevent default form submission
+   // Add event listener to form submission
+document.getElementById("order-form").addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent default form submission
 
-          // Retrieve form data
-          var formData = new FormData(event.target);
-          var formDataObject = {};
-          formData.forEach(function (value, key) {
-            formDataObject[key] = value;
-          });
+  // Retrieve form data
+  var formData = new FormData(event.target);
+  var formDataObject = {};
+  formData.forEach(function (value, key) {
+    formDataObject[key] = value;
+  });
 
-          // Retrieve cart items from localStorage
-          var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+  // Retrieve cart items from localStorage
+  var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
-          // Save form data and cart items to Firebase Realtime Database
-          var database = firebase.database();
-          var ordersRef = database.ref("orders");
-          var newOrderRef = ordersRef.push();
-          newOrderRef
-            .set({
-              name: formDataObject.name,
-              contact: formDataObject.contact,
-              address: formDataObject.address,
-              cartItems: cartItems,
-            })
-            .then(function () {
-              // Redirect to pay.html
-              window.location.href = "pay.html";
-            })
-            .catch(function (error) {
-              console.error("Error saving order:", error);
-              alert(
-                "Error occurred while placing the order. Please try again later."
-              );
-            });
-        });
+  // Save form data and cart items to Firebase Realtime Database
+  var database = firebase.database();
+  var ordersRef = database.ref("orders");
+
+  // Get user's current location
+  navigator.geolocation.getCurrentPosition(function(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+
+    // Create a string with the latitude and longitude
+    var location = latitude + ", " + longitude;
+
+    // Save order data including location to Firebase
+    var newOrderRef = ordersRef.push();
+    newOrderRef.set({
+      name: formDataObject.name,
+      contact: formDataObject.contact,
+      address: formDataObject.address,
+      location: location, // Save the dynamically obtained location
+      cartItems: cartItems,
+    })
+    .then(function() {
+      console.log("Order successfully saved to Firebase!");
+      
+      // Redirect to pay.html after order is successfully saved
+      window.location.href = "pay.html";
+    })
+    .catch(function(error) {
+      console.error("Error saving order to Firebase: ", error);
+      alert("Error occurred while placing the order. Please try again later.");
+    });
+  }, function(error) {
+    console.error("Error getting user's location: ", error);
+  });
+});
+
+
     </script>
     <script src="script.js"></script>
   </body>
