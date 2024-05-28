@@ -97,6 +97,7 @@
   .cart-items {
     font-size: 3rem !important;
     /* background-color: red !important; */
+    text-align: center;
   }
   
   .thankyou {
@@ -123,6 +124,10 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+  }
+
+  .form {
+    width: 100%;
   }
   
   /* -----------------------------------------------breakpoints--------------------------------- */
