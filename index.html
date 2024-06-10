@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>STEP FUSION</title>
+    <title>Littletoescouturehouse</title>
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -16,69 +16,95 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="categories.css" />
+    
   </head>
   <body>
     <!-- -----------------------------------------Header--------------------------------------- -->
     <div class="header">
-        <div class="header-container">
-          <button onclick="openNav()" class="navbar-toggler" type="button">
-            <i class="ri-menu-line sidebar-btn"></i>
+      <div class="header-container">
+        <button onclick="openNav()" class="navbar-toggler" type="button">
+          <i class="ri-menu-line sidebar-btn"></i>
+        </button>
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.jpg" alt="logo" /></a>
+        </div>
+        <div class="navbar">
+          <a href="index.html">Home</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="addtocart">
+          <a href="cart.html"><i class="ri-shopping-cart-2-fill"></i></a>
+        </div>
+      </div>
+      <!-- open sidebar -->
+      <aside class="sidepanel" id="mysidepanel">
+        <div class="sidebar flex">
+          <button
+            onclick="closeNav()"
+            type="button"
+            class="closebtn btn_hover1"
+          >
+            <i class="fa-solid fa-xmark"></i>
           </button>
-          <div class="logo">
-            <a href="index.html"><img src="images/logo.jpg" alt="logo" /></a>
-          </div>
-          <div class="navbar">
-            <a href="index.html">Home</a>
-            <a href="contact.html">Contact Us</a>
-          </div>
-          <div class="addtocart">
-            <a href="cart.html"><i class="ri-shopping-cart-2-fill"></i></a>
-          </div>
         </div>
-        <!-- open sidebar -->
-        <aside class="sidepanel" id="mysidepanel">
-          <div class="sidebar flex">
-            <button
-              onclick="closeNav()"
-              type="button"
-              class="closebtn btn_hover1"
-            >
-              <i class="fa-solid fa-xmark"></i>
-            </button>
-          </div>
-          <!-- -----------side menus--------------- -->
-          <ul>
-            <li><a href="index.html" class="nav-link active">Home</a></li>
-            <li>
-              <a href="contact.html" class="nav-link">Contact Us</a>
-            </li>
-          </ul>
-        </aside>
-      </div>
-
-
-    <!-- -------------------------------------------------Eid-------------------------------------- -->
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <span class="close">&times;</span>
-            <h2>80% OFF + FREE SHIPPING</h2>
-            <p>if you get this item now.<br>This timepiece is yours for the next</p>
-            <div id="countdown" class="countdown">15:00</div>
-            <button id="getOffer" class="button">GET MY 80% OFF</button>
-            <button id="declineOffer" class="button">No thanks, I'd rather pay full price</button>
-        </div>
+        <!-- -----------side menus--------------- -->
+        <ul>
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li>
+            <a href="contact.html" class="nav-link">Contact Us</a>
+          </li>
+        </ul>
+      </aside>
     </div>
-    <section class="packages">
-      <div class="content">
-        <h1>Shoe Collection</h1>
+    
+    <!-- -------------------------------------------------Home-------------------------------------- -->
+     <div class="home" id="home">
+      <div class="home-container">
+        <div class="home-img">
+          <img src="images/home1.png" alt="home" />
+          <img src="images/home2.png" alt="home" />
+        </div>
+        <div class="home-btn">
+          <a href="trimmer.html" class="btn-1">Shop Now</a>
+        </div>
+        <div class="home-social-container">
+       
+        </div>
       </div>
+    </div> 
 
-      <div class="packages-box-container">
-        <div id="menu"></div>
-      </div>
-    </section>
+    <!--- -------------------------------------------------sale-------------------------------------- -->
+     <div class="winter-sale-container">
+     <section class="winter-sale" id="sale">
+        <div class="container">
+          <div class="content">
+            <h1>End Of Winter Sale</h1>
+            <p>Get 50% Off full price and sale items. Taxes are applied</p>
+          </div>
+          <div class="sale-btn">
+            <a href="trimmer" class="btn-1"
+              >Shop Trimmers <i class="ri-arrow-right-line"></i
+            ></a>
+           
+          </div>
+          <div class="sales-img">
+            <img src="images/sale1.png" alt="sale" />
+            <img src="images/sale2.png" alt="sale" />
+          </div>
+          <div class="sale-img-btn1">
+          
+          </div>
+          <div class="sale-img-btn2">
+            <a href="#" class="btn-1">Shop Now</a>
+          </div>
+        </div>
+      </section>
+    </div> 
 
+    <!-- -------------------------------------------------categories-------------------------------------- -->
+  
+    <!-- -------------------------------------------------About-------------------------------------- -->
+ 
     <!-- -------------------------------------------------footer-------------------------------------- -->
     <div class="footer-container">
       <section class="footer">
@@ -87,177 +113,119 @@
             <a href="#"
               ><img class="logo footer-logo" src="images/logo.jpg"
             /></a>
-            <p class="footer-line">Something New, For Every Feet.</p>
+            <p class="footer-line">Everything at your step.</p>
             <div class="socials">
               <a
-                href="https://www.facebook.com/share/m6se22ZmSjuo8sG8/?mibextid=qi2Omg"
-                ><i class="ri-facebook-line"></i
-              ></a>
-              <a
-                href="https://www.instagram.com/stepfusion_co?igsh=bHQxZzZndDJlcnly"
-                ><i class="ri-instagram-line"></i
-              ></a>
-              <a href="https://wa.me/+923152831124"
-                ><i class="ri-whatsapp-fill"></i
-              ></a>
-              <a href="#"><i class="ri-mail-line"></i></a>
-            </div>
-          </div>
-
-
-          <div class="box contact-info">
-            <h3>Contact Info</h3>
-            <a href="tel:+923152831124" class="phone-number"
-              ><i class="fa-solid fa-phone"></i>+92-315-2831124</a
-            >
-            <p>
-              <i class="fa-solid fa-envelope"></i
-              >info@stepfusion.shop
-            </p>
-            <p><i class="fa-solid fa-clock"></i>24/7</p>
-          </div>
-
-          <div class="box">
-            <h3>NewsLetter</h3>
-            <p>Subscribe For latest Updates</p>
-            <form action="" id="newsletter">
-              <input
-                type="email"
-                id="email"
-                name=""
-                placeholder="Drop your email"
-                class="newsletter"
-              />
-              <input type="submit" value="subscribe" class="btn-1" />
-            </form>
+              href="https://www.facebook.com/share/m6se22ZmSjuo8sG8/?mibextid=qi2Omg"
+              ><i class="ri-facebook-line"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/stepfusion_co?igsh=bHQxZzZndDJlcnly"
+              ><i class="ri-instagram-line"></i
+            ></a>
+            <a href="https://wa.me/+923152831124"
+              ><i class="ri-whatsapp-fill"></i
+            ></a>
+            <a href="#"><i class="ri-mail-line"></i></a>
           </div>
         </div>
-      </section>
-    </div>
 
-    <div class="copywrite">
-      <span>Step Fusion</span> | all rights reserved
-    </div>
 
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
-    <script src="firebase.js"></script>
+        <div class="box contact-info">
+          <h3>Contact Info</h3>
+          <a href="tel:+923152831124" class="phone-number"
+            ><i class="fa-solid fa-phone"></i>+92-315-2831124</a
+          >
+          <p>
+            <i class="fa-solid fa-envelope"></i
+            >info@stepfusion.shop
+          </p>
+          <p><i class="fa-solid fa-clock"></i>24/7</p>
+        </div>
 
-    <script>
-         var database = firebase.database();
-
-// Fetch menu data from Firebase
-var menuRef = database.ref("shoes");
-menuRef.once("value", function (snapshot) {
-  // Use once instead of on to fetch the data only once
-  var menuData = snapshot.val();
-
-  // Display menu data on the web page
-  var menuContainer = document.getElementById("menu");
-  menuContainer.innerHTML = "";
-
-  for (var key in menuData) {
-    if (menuData.hasOwnProperty(key)) {
-      var menuItem = menuData[key];
-      var firstImageUrl = Array.isArray(menuItem.images)
-        ? menuItem.images[0]
-        : menuItem.images; // Get the first image URL if it's an array
-
-      var menuItemElement = document.createElement("div");
-      menuItemElement.innerHTML = `
-      <div class="btn-container">
-        <button class="btn-package" onclick="redirectToUrl('${menuItem.name}')">
-          <div class="packagesBox">
-              <div class="image">
-                  <img src="${firstImageUrl}" alt="${menuItem.name}" class="menu-image"> 
-              </div>
-              <div class="preview">
-              </div>
-              <div class="content">
-                  <div class="package-details">    
-                      <div class="package-name">    
-                          <h2 class="multiline-ellipsis-2">${menuItem.name}</h2>
-                      </div>
-                      <div class="package-price">        
-                          <h4 class="multiline-ellipsis-3">$ ${menuItem.button1Price}</h4>
-                      </div>    
-                  </div>    
-              </div>    
-          </div> 
-        </button>
+        <div class="box">
+          <h3>NewsLetter</h3>
+          <p>Subscribe For latest Updates</p>
+          <form action="" id="newsletter">
+            <input
+              type="email"
+              id="email"
+              name=""
+              placeholder="Drop your email"
+              class="newsletter"
+            />
+            <input type="submit" value="subscribe" class="btn-1" />
+          </form>
+        </div>
       </div>
-      `;
-      menuContainer.appendChild(menuItemElement);
+    </section>
+  </div>
 
-      // Break the loop after the first iteration
-    }
-  }
-});
+  <div class="copywrite">
+    <span>Step Fusion</span> | all rights reserved
+  </div>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+    <script src="firebase.js"></script>
+    
+    <script>  var database = firebase.database();
 
-function redirectToUrl(itemName) {
-  // Save itemName to localStorage
-  localStorage.setItem("itemName", itemName);
+      // Fetch menu data from Firebase
+      var menuRef = database.ref("shoes");
+      menuRef.once("value", function (snapshot) {
+        // Use once instead of on to fetch the data only once
+        var menuData = snapshot.val();
 
-  var url = "/shoe.html";
-  window.location.href = url;
-}
-      document.addEventListener("DOMContentLoaded", function() {
-    var popup = document.getElementById("popup");
-    var closeBtn = document.querySelector(".close");
-    var getOfferBtn = document.getElementById("getOffer");
-    var declineOfferBtn = document.getElementById("declineOffer");
-    var countdownElement = document.getElementById("countdown");
+        // Display menu data on the web page
+        var menuContainer = document.getElementById("menu");
+        menuContainer.innerHTML = "";
 
-    // Function to start the countdown
-    function startCountdown(duration, display) {
-        var timer = duration, minutes, seconds;
-        var interval = setInterval(function () {
-            minutes = parseInt(timer / 60, 10);
-            seconds = parseInt(timer % 60, 10);
+        for (var key in menuData) {
+          if (menuData.hasOwnProperty(key)) {
+            var menuItem = menuData[key];
+            var firstImageUrl = Array.isArray(menuItem.images)
+              ? menuItem.images[0]
+              : menuItem.images; // Get the first image URL if it's an array
 
-            minutes = minutes < 10 ? "0" + minutes : minutes;
-            seconds = seconds < 10 ? "0" + seconds : seconds;
+            var menuItemElement = document.createElement("div");
+            menuItemElement.innerHTML = `
+            <div class="btn-container">
+              <button class="btn-package" onclick="redirectToUrl('${menuItem.name}')">
+                <div class="packagesBox">
+                    <div class="image">
+                        <img src="${firstImageUrl}" alt="${menuItem.name}" class="menu-image"> 
+                    </div>
+                    <div class="preview">
+                    </div>
+                    <div class="content">
+                        <div class="package-details">    
+                            <div class="package-name">    
+                                <h2 class="multiline-ellipsis-2">${menuItem.name}</h2>
+                            </div>
+                            <div class="package-price">        
+                                <h4 class="multiline-ellipsis-3">Rs ${menuItem.button1Price}</h4>
+                            </div>    
+                        </div>    
+                    </div>    
+                </div> 
+              </button>
+            </div>
+            `;
+            menuContainer.appendChild(menuItemElement);
 
-            display.textContent = minutes + ":" + seconds;
-
-            if (--timer < 0) {
-                clearInterval(interval);
-            }
-        }, 1000);
-    }
-
-    // Show the popup when the page loads
-    popup.style.display = "block";
-
-    // Start the 15 minute countdown
-    var fifteenMinutes = 15 * 60;
-    startCountdown(fifteenMinutes, countdownElement);
-
-    // Close the popup when the close button is clicked
-    closeBtn.onclick = function() {
-        popup.style.display = "none";
-    };
-
-    // Close the popup when the get offer button is clicked
-    getOfferBtn.onclick = function() {
-        popup.style.display = "none";
-    };
-
-    // Close the popup when the decline offer button is clicked
-    declineOfferBtn.onclick = function() {
-        alert("Are you ok with declining the offer?!");
-        popup.style.display = "none";
-    };
-
-    // Close the popup if the user clicks outside of it
-    window.onclick = function(event) {
-        if (event.target == popup) {
-            popup.style.display = "none";
+            // Break the loop after the first iteration
+          }
         }
-    };
-});
+      });
 
-    </script>
-    <script src="script.js"></script>
+      function redirectToUrl(itemName) {
+        // Save itemName to localStorage
+        localStorage.setItem("itemName", itemName);
+
+        var url = "/shoe.html";
+        window.location.href = url;
+      }</script>
   </body>
 </html>
