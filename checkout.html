@@ -87,7 +87,7 @@
                 class="form-input"
                 name="contact"
                 id="contact"
-                type="email"
+                type="tel"
               />
             </div>
             <div class="form-group">
@@ -240,7 +240,7 @@ document.getElementById("order-form").addEventListener("submit", function (event
       console.log("Order successfully saved to Firebase!");
       
       // Redirect to pay.html after order is successfully saved
-      window.location.href = "pay.html";
+      alert("order placed") ;
     })
     .catch(function(error) {
       console.error("Error saving order to Firebase: ", error);
