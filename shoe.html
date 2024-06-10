@@ -380,7 +380,7 @@ ${
                   var currentPrice =
                     menuItemElement.querySelector("#current-price h4");
                   currentPrice.textContent =
-                    "$ " + priceButton.getAttribute("data-price");
+                    "Rs " + priceButton.getAttribute("data-price");
 
                   // Capture the current button name
                   var currentButtonName = priceButton.textContent;
@@ -409,7 +409,7 @@ ${
                 var randomImage = itemImages[randomImageIndex]; // Get a random image from the array
                 var itemPrice = menuItemElement
                   .querySelector("#current-price h4")
-                  .textContent.replace("$ ", "");
+                  .textContent.replace("Rs ", "");
 
                 // Retrieve the current button name from localStorage
                 var currentButtonName =
